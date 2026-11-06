@@ -85,6 +85,14 @@ python3 analisis_graficas.py
 
 ## 📉 Gráficas Generadas
 
-- **`grafica_lineal.png`**: Visualización del tiempo de ejecución en escala lineal.
-- **`grafica_log.png`**: Visualización del tiempo de ejecución en escala logarítmica (ajuste a modelo $\log_2(n)$).
-- **`boxplot.png`**: Distribución estadística del tiempo para el tamaño máximo de entrada.
+### 1. Gráfica Lineal — Mediana vs n (escala lineal)
+
+![Gráfica Lineal](grafica_lineal.png)
+
+### 2. Gráfica Logarítmica — Mediana vs log₂(n)
+
+![Gráfica Logarítmica](grafica_log.png)
+
+### 3. Boxplot — Distribución n = 12,800 (100 repeticiones)
+
+![Boxplot](boxplot.png)
