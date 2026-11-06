@@ -4,27 +4,31 @@
 
 ---
 
-## Contenido de la Entrega
+## Reproducción del Experimento
 
-| Archivo | Descripción |
-|---------|-------------|
-| `informe_bitacora1.md` | Informe técnico completo (Markdown) |
-| `informe_bitacora1.docx` | Informe en formato Word |
-| `pruebas_busqueda.py` | Script de medición empírica |
-| `analisis_graficas.py` | Script de análisis y generación de gráficas |
-| `resultados.csv` | Datos crudos (2,400 mediciones) |
-| `estadisticas.csv` | Mediana, Q1, Q3 por n y caso |
-| `analisis_cotas.txt` | Razones T(2n)/T(n), modelos de regresión, cotas |
-| `tabla_latex.txt` | Tabla LaTeX lista para compilar |
-| `grafica_lineal.png` | Mediana vs n (escala lineal) |
-| `grafica_log.png` | Mediana vs log₂(n) (escala logarítmica) |
-| `boxplot.png` | Distribución n=12,800 (100 repeticiones) |
-| `resumen_analisis.txt` | Resumen numérico del ajuste |
-| `entrega_bitacora1.zip` | Paquete completo de entrega |
+### Requisitos
+- Python 3.10+
+- Paquetes: `pandas`, `matplotlib`, `numpy`
 
----
+```bash
+pip install pandas matplotlib numpy
+```
 
-## Resultados Experimentales Clave
+### Ejecución paso a paso
+
+```bash
+# 1. Clonar repositorio
+git clone https://github.com/dsalazar4446/Equipo_2_Bitacora1.git
+cd Equipo_2_Bitacora1/
+
+# 2. Generar datos empíricos (resultados.csv)
+python3 pruebas_busqueda.py
+# Salida esperada: "Script finalizado. Resultados en 'resultados.csv'"
+
+# 3. Procesar datos y generar análisis + gráficas
+python3 analisis_graficas.py
+# Salida esperada: estadisticas.csv, grafica_lineal.png, grafica_log.png, boxplot.png, tabla_latex.txt, analisis_cotas.txt
+```
 
 ### Parámetros del Experimento
 | Parámetro | Valor |
@@ -35,6 +39,10 @@
 | **Semilla aleatoria** | Fija (`random.seed(42)`) |
 | **Medición** | `time.perf_counter_ns()` (nanosegundos) |
 | **Total mediciones** | 2,400 (8 tamaños × 3 casos × 100 repeticiones) |
+
+---
+
+## Resultados Experimentales Clave
 
 ### Análisis de Razones T(2n)/T(n)
 
@@ -95,30 +103,22 @@ Al graficar contra log₂(n), los puntos se alinean casi perfectamente en línea
 
 ---
 
-## Reproducción del Experimento
+## Contenido de la Entrega
 
-### Requisitos
-- Python 3.10+
-- Paquetes: `pandas`, `matplotlib`, `numpy`
-
-```bash
-pip install pandas matplotlib numpy
-```
-
-### Ejecución paso a paso
-
-```bash
-# 1. Clonar/ubicarse en la carpeta
-cd Equipo_2_Bitacora1/
-
-# 2. Generar datos empíricos (resultados.csv)
-python3 pruebas_busqueda.py
-# Salida esperada: "Script finalizado. Resultados en 'resultados.csv'"
-
-# 3. Procesar datos y generar análisis + gráficas
-python3 analisis_graficas.py
-# Salida esperada: estadisticas.csv, grafica_lineal.png, grafica_log.png, boxplot.png, tabla_latex.txt, analisis_cotas.txt
-```
+| Archivo | Descripción |
+|---------|-------------|
+| `informe_bitacora1.md` | Informe técnico completo (Markdown) |
+| `informe_bitacora1.docx` | Informe en formato Word |
+| `pruebas_busqueda.py` | Script de medición empírica |
+| `analisis_graficas.py` | Script de análisis y generación de gráficas |
+| `resultados.csv` | Datos crudos (2,400 mediciones) |
+| `estadisticas.csv` | Mediana, Q1, Q3 por n y caso |
+| `analisis_cotas.txt` | Razones T(2n)/T(n), modelos de regresión, cotas |
+| `tabla_latex.txt` | Tabla LaTeX lista para compilar |
+| `grafica_lineal.png` | Mediana vs n (escala lineal) |
+| `grafica_log.png` | Mediana vs log₂(n) (escala logarítmica) |
+| `boxplot.png` | Distribución n=12,800 (100 repeticiones) |
+| `resumen_analisis.txt` | Resumen numérico del ajuste |
 
 ---
 
