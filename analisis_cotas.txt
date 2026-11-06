@@ -1,0 +1,59 @@
+=== ANÁLISIS DE COTAS Y RAZONES T(2n)/T(n) ===
+
+Tamaños probados: 100, 200, 400, 800, 1600, 3200, 6400, 12800
+Repeticiones: 100
+
+--- Caso FAVORABLE ---
+     n | Mediana (ns) |   T(2n)/T(n)
+--------------------------------------
+   100 |        375.0 |       (base)
+   200 |        458.0 |        1.221
+   400 |        459.0 |        1.002
+   800 |        583.0 |        1.270
+  1600 |        625.0 |        1.072
+  3200 |        667.0 |        1.067
+  6400 |        708.0 |        1.061
+ 12800 |        709.0 |        1.001
+
+Razón promedio T(2n)/T(n): 1.099 (esperado ~1.0 para log₂(n) + 1 iteración extra)
+Modelo: T(n) = 50.64 * log₂(n) + 59.29
+R² = 0.946666
+
+Cota propuesta: T(n) <= 50.6 * log₂(n) + 59.3 para n >= 100
+
+--- Caso PEOR ---
+     n | Mediana (ns) |   T(2n)/T(n)
+--------------------------------------
+   100 |        458.0 |       (base)
+   200 |        500.0 |        1.092
+   400 |        562.5 |        1.125
+   800 |        625.0 |        1.111
+  1600 |        667.0 |        1.067
+  3200 |        750.0 |        1.124
+  6400 |        750.0 |        1.000
+ 12800 |        792.0 |        1.056
+
+Razón promedio T(2n)/T(n): 1.082 (esperado ~1.0 para log₂(n) + 1 iteración extra)
+Modelo: T(n) = 49.91 * log₂(n) + 131.78
+R² = 0.978189
+
+Cota propuesta: T(n) <= 49.9 * log₂(n) + 131.8 para n >= 100
+
+--- Caso NEGATIVO ---
+     n | Mediana (ns) |   T(2n)/T(n)
+--------------------------------------
+   100 |        375.0 |       (base)
+   200 |        458.0 |        1.221
+   400 |        500.0 |        1.092
+   800 |        542.0 |        1.084
+  1600 |        583.0 |        1.076
+  3200 |        667.0 |        1.144
+  6400 |        708.0 |        1.061
+ 12800 |        750.0 |        1.059
+
+Razón promedio T(2n)/T(n): 1.105 (esperado ~1.0 para log₂(n) + 1 iteración extra)
+Modelo: T(n) = 52.58 * log₂(n) + 39.48
+R² = 0.990798
+
+Cota propuesta: T(n) <= 52.6 * log₂(n) + 39.5 para n >= 100
+

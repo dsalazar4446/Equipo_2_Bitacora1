@@ -1,0 +1,20 @@
+=== RESUMEN ANÁLISIS EMPIRICO ===
+
+Tamaños probados: 100, 1000, 10000, 50000, 100000, 200000, 500000
+Repeticiones por caso: 50
+
+--- Caso FAVORABLE ---
+Modelo: tiempo = 50.94 * log₂(n) + 220.73
+R² = 0.995540 (muy cercano a 1, confirma O(log n))
+
+--- Caso PEOR ---
+Modelo: tiempo = 47.10 * log₂(n) + 218.37
+R² = 0.949499 (muy cercano a 1, confirma O(log n))
+
+--- Caso NEGATIVO ---
+Modelo: tiempo = 41.65 * log₂(n) + 269.42
+R² = 0.937528 (muy cercano a 1, confirma O(log n))
+
+CONCLUSIÓN: Los tres casos siguen comportamiento logarítmico esperado.
+El caso favorable es ligeramente más rápido (termina en la primera iteración).
+Caso peor y negativo tienen tiempos muy similares, ambos recorren todo el árbol de decisión.
