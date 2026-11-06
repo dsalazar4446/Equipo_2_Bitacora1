@@ -10,9 +10,6 @@
 2. [Reproducción del Experimento](#reproducción-del-experimento)
 3. [Resultados Experimentales Clave](#resultados-experimentales-clave)
 4. [Gráficas Generadas](#gráficas-generadas)
-5. [Estructura del Informe](#estructura-del-informe-pautas-cumplidas)
-6. [Defensa Oral](#defensa-oral)
-7. [Contacto](#contacto)
 
 ---
 
@@ -66,10 +63,9 @@ python3 analisis_graficas.py
 |-----------|-------|
 | **Tamaños (n)** | 100, 200, 400, 800, 1600, 3200, 6400, 12800 (potencias de 2 × 100) |
 | **Repeticiones por caso** | 100 |
-| **Casos evaluados** | Favorable (posición media), Peor (último elemento), Negativo (−1) |
+| **Casos evaluados** | Favorable, Peor, Negativo |
 | **Semilla aleatoria** | Fija (`random.seed(42)`) |
 | **Medición** | `time.perf_counter_ns()` (nanosegundos) |
-| **Total mediciones** | 2,400 (8 tamaños × 3 casos × 100 repeticiones) |
 
 ---
 
@@ -79,78 +75,16 @@ python3 analisis_graficas.py
 
 | Caso | Razón Promedio T(2n)/T(n) | Interpretación |
 |------|---------------------------|----------------|
-| **Favorable** | **1.099** | ~1.0 confirma crecimiento logarítmico (al duplicar n se añade ~1 iteración) |
+| **Favorable** | **1.099** | ~1.0 confirma crecimiento logarítmico |
 | **Peor** | **1.082** | ~1.0 confirma crecimiento logarítmico |
 | **Negativo** | **1.105** | ~1.0 confirma crecimiento logarítmico |
 
-> **Conclusión:** Las tres razones cercanas a 1.0 validan que T(n) ∈ Θ(log₂ n), ya que T(2n) ≈ T(n) + constante.
-
-### Modelos de Regresión Logarítmica (T(n) = α·log₂ n + β)
-
-| Caso | Modelo Ajustado | R² | Cota Propuesta (n ≥ 100) |
-|------|-----------------|-----|--------------------------|
-| **Favorable** | `50.64·log₂(n) + 59.29` | **0.947** | `T(n) ≤ 50.6·log₂(n) + 59.3` |
-| **Peor** | `49.91·log₂(n) + 131.78` | **0.978** | `T(n) ≤ 49.9·log₂(n) + 131.8` |
-| **Negativo** | `52.58·log₂(n) + 39.48` | **0.991** | `T(n) ≤ 52.6·log₂(n) + 39.5` |
-
-> **Interpretación:** Todos los casos presentan R² > 0.94, confirmando el comportamiento teórico Θ(log n). El caso Negativo muestra el mejor ajuste (R² = 0.991).
-
-### Estadísticas Resumidas (Mediana en nanosegundos)
-
-| n | Favorable | Peor | Negativo |
-|---|-----------|------|----------|
-| 100 | 375 | 458 | 375 |
-| 200 | 458 | 500 | 458 |
-| 400 | 459 | 562.5 | 500 |
-| 800 | 583 | 625 | 542 |
-| 1600 | 625 | 667 | 583 |
-| 3200 | 667 | 750 | 667 |
-| 6400 | 708 | 750 | 708 |
-| 12800 | 709 | 792 | 750 |
+> **Conclusión:** Las razones cercanas a 1.0 validan que $T(n) \in \Theta(\log_2 n)$.
 
 ---
 
-## 📈 Gráficas Generadas
+## 📉 Gráficas Generadas
 
-### 1. Gráfica Lineal — `grafica_lineal.png`
-**Mediana vs n (escala lineal)**  
-Muestra la curva característica de crecimiento logarítmico: el tiempo aumenta rápidamente al principio y luego se aplana visiblemente. Los tres casos muestran trayectorias paralelas confirmando el mismo orden de crecimiento.
-
-![Gráfica Lineal](grafica_lineal.png)
-
-### 2. Gráfica Logarítmica — `grafica_log.png`
-**Mediana vs log₂(n)**  
-Al graficar contra log₂(n), los puntos se alinean casi perfectamente en líneas rectas, demostrando la relación lineal T(n) ∝ log₂(n). Las pendientes son ~50 ns por nivel de log₂(n).
-
-![Gráfica Logarítmica](grafica_log.png)
-
-### 3. Boxplot — `boxplot.png`
-**Distribución de tiempos para n = 12,800 (100 repeticiones)**  
-- **Caso Favorable**: Mayor variabilidad (algunas ejecuciones terminan en 1 iteración, otras en 2 por cold-start)
-- **Caso Peor**: Distribución muy estable, todos requieren altura completa del árbol
-- **Caso Negativo**: Muy estable, idéntico al caso Peor en comportamiento
-
-![Boxplot](boxplot.png)
-
----
-
-## 📚 Estructura del Informe (pautas cumplidas)
-
-1. **Problema y Especificación** — Entradas, salidas, pre/postcondiciones formales
-2. **Demostración de Corrección** — Pseudocódigo + Invariante de ciclo (3 momentos) + Terminación
-3. **Análisis de Costo** — Operación dominante, recurrencia, Teorema Maestro, casos mejor/peor/promedio, cotas
-4. **Pruebas Empíricas** — Metodología, tablas, gráficas (lineal, log-log, boxplot), contraste teoría vs. práctica
-5. **Conclusiones** — 4 puntos: correctitud, complejidad, comportamiento casos, reproducibilidad
-
----
-
-## 🎤 Defensa Oral
-
-Ver `GUIA_DEFENSA_BITACORA1.md` (en carpeta superior) para el guion completo de 15 minutos (5 integrantes × 3 min c/u).
-
----
-
-## 📞 Contacto
-
-**Equipo 2** — Análisis y Diseño de Algoritmos — 2026-III  
-Universidad Nacional Experimental de Guayana
+- **`grafica_lineal.png`**: Visualización del tiempo de ejecución en escala lineal.
+- **`grafica_log.png`**: Visualización del tiempo de ejecución en escala logarítmica (ajuste a modelo $\log_2(n)$).
+- **`boxplot.png`**: Distribución estadística del tiempo para el tamaño máximo de entrada.
