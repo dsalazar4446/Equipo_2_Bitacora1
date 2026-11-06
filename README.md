@@ -4,7 +4,38 @@
 
 ---
 
-## Reproducción del Experimento
+## 📋 Índice de Contenidos
+
+1. [Contenido de la Entrega](#contenido-de-la-entrega)
+2. [Reproducción del Experimento](#reproducción-del-experimento)
+3. [Resultados Experimentales Clave](#resultados-experimentales-clave)
+4. [Gráficas Generadas](#gráficas-generadas)
+5. [Estructura del Informe](#estructura-del-informe-pautas-cumplidas)
+6. [Defensa Oral](#defensa-oral)
+7. [Contacto](#contacto)
+
+---
+
+## 📦 Contenido de la Entrega
+
+| Archivo | Descripción |
+|---------|-------------|
+| `informe_bitacora1.md` | Informe técnico completo (Markdown) |
+| `informe_bitacora1.docx` | Informe en formato Word |
+| `pruebas_busqueda.py` | Script de medición empírica |
+| `analisis_graficas.py` | Script de análisis y generación de gráficas |
+| `resultados.csv` | Datos crudos (2,400 mediciones) |
+| `estadisticas.csv` | Mediana, Q1, Q3 por n y caso |
+| `analisis_cotas.txt` | Razones T(2n)/T(n), modelos de regresión, cotas |
+| `tabla_latex.txt` | Tabla LaTeX lista para compilar |
+| `grafica_lineal.png` | Mediana vs n (escala lineal) |
+| `grafica_log.png` | Mediana vs log₂(n) (escala logarítmica) |
+| `boxplot.png` | Distribución n=12,800 (100 repeticiones) |
+| `resumen_analisis.txt` | Resumen numérico del ajuste |
+
+---
+
+## 🔬 Reproducción del Experimento
 
 ### Requisitos
 - Python 3.10+
@@ -42,7 +73,7 @@ python3 analisis_graficas.py
 
 ---
 
-## Resultados Experimentales Clave
+## 📊 Resultados Experimentales Clave
 
 ### Análisis de Razones T(2n)/T(n)
 
@@ -79,7 +110,7 @@ python3 analisis_graficas.py
 
 ---
 
-## Gráficas Generadas
+## 📈 Gráficas Generadas
 
 ### 1. Gráfica Lineal — `grafica_lineal.png`
 **Mediana vs n (escala lineal)**  
@@ -103,26 +134,7 @@ Al graficar contra log₂(n), los puntos se alinean casi perfectamente en línea
 
 ---
 
-## Contenido de la Entrega
-
-| Archivo | Descripción |
-|---------|-------------|
-| `informe_bitacora1.md` | Informe técnico completo (Markdown) |
-| `informe_bitacora1.docx` | Informe en formato Word |
-| `pruebas_busqueda.py` | Script de medición empírica |
-| `analisis_graficas.py` | Script de análisis y generación de gráficas |
-| `resultados.csv` | Datos crudos (2,400 mediciones) |
-| `estadisticas.csv` | Mediana, Q1, Q3 por n y caso |
-| `analisis_cotas.txt` | Razones T(2n)/T(n), modelos de regresión, cotas |
-| `tabla_latex.txt` | Tabla LaTeX lista para compilar |
-| `grafica_lineal.png` | Mediana vs n (escala lineal) |
-| `grafica_log.png` | Mediana vs log₂(n) (escala logarítmica) |
-| `boxplot.png` | Distribución n=12,800 (100 repeticiones) |
-| `resumen_analisis.txt` | Resumen numérico del ajuste |
-
----
-
-## Estructura del Informe (pautas cumplidas)
+## 📚 Estructura del Informe (pautas cumplidas)
 
 1. **Problema y Especificación** — Entradas, salidas, pre/postcondiciones formales
 2. **Demostración de Corrección** — Pseudocódigo + Invariante de ciclo (3 momentos) + Terminación
@@ -132,13 +144,13 @@ Al graficar contra log₂(n), los puntos se alinean casi perfectamente en línea
 
 ---
 
-## Defensa Oral
+## 🎤 Defensa Oral
 
 Ver `GUIA_DEFENSA_BITACORA1.md` (en carpeta superior) para el guion completo de 15 minutos (5 integrantes × 3 min c/u).
 
 ---
 
-## Contacto
+## 📞 Contacto
 
 **Equipo 2** — Análisis y Diseño de Algoritmos — 2026-III  
 Universidad Nacional Experimental de Guayana
